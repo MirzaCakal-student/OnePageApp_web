@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule an Appointment</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212; 
+            color: #ffffff;
+            margin: 0;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #ff5722; 
+            margin-top: 50px;
+        }
+        .navbar-custom {
+            background-color: #1a1a1a;
+        }
+        .navbar-nav a {
+            color: #ff5722 !important; 
+        }
+        .container {
+            max-width: 500px;
+            margin: 20px auto;
+            margin-bottom: 60px;
+            padding: 20px;
+            background-color: #1a1a1a; 
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+        label {
+            font-size: 18px;
+        }
+        input[type="text"], input[type="date"], select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: none;
+            background-color: #333;
+            color: #ffffff;
+        }
+        #btn1 {
+            width: 100%;
+            padding: 10px;
+            background-color: #ff5722;
+            color: #ffffff;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        #btn1:hover {
+            background-color: #cf5834;
+        }
+        button:hover{
+            background-color: #ff5722; 
+        }
+        html, body {
+            height: 100%; 
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container1 {
+            flex: 1; 
+        }
+
+        footer {
+            background-color: #1a1a1a;
+            color: #ff5722; 
+            text-align: center;
+            padding: 15px 0;
+            width: 100%;
+        }
+
+        .text-orange {
+            color: #ff5722 !important; 
+        }
+
+       
+        .light {
+            background-color: #ffffff; 
+            color: #ffffff;
+        }
+
+        .light .navbar-custom {
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .light .container {
+            background-color: #ffffff;
+            color: #343a40;
+        }
+
+        .light footer {
+            background-color: #e0e0e0;
+            color: #ffffff;
+        }
+
+        
+        .dark {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        .dark .navbar-custom {
+            background-color: #1a1a1a;
+        }
+
+        .dark .container {
+            background-color: #1a1a1a;
+        }
+
+        .dark footer {
+            background-color: #1a1a1a;
+            color: #ff5722;
+        }
+
+        .form-check-label {
+            color: #ffffff !important;
+        }
+
+        .light .form-check-label {
+            color: #000000 !important; 
+        }
+
+      
+        .form-check-label {
+            margin-left: 10px;
+            
+        }
+
+        .light .form-check-label {
+            color: #000000; 
+        }
+
+        .dark .form-check-label {
+            color: #ffffff; 
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td {
+            border: 1px solid #333;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #ff5722;
+            color: #ffffff;
+        }
+        tr:nth-child(even) {
+            background-color: #333;
+        }
+        tr:hover {
+            background-color: #444;
+        }
+        .button {
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: none;
+            color: #ffffff;
+        }
+        .edit-btn {
+            background-color: #4caf50;
+        }
+        .delete-btn {
+            background-color: #f44336;
+        }
+    </style>
+</head>
+<body class="bg-dark text-light">
+    <nav class="navbar navbar-expand-lg navbar-custom py-3">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand" href="#">
+                <img src="slike/logo.png" alt="Logo" style="height: 70px; width: 70px;">
+            </a>
+            <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div id="nav1" class="navbar-nav ms-auto">
+                    <a href="main.html" class="nav-link menuItem text-light mx-2">Home</a>
+                    <a href="shop.html" class="nav-link menuItem text-light mx-2">Shop</a>
+                    <a href="termin.html" class="nav-link menuItem text-light mx-2">Appointment</a>
+                    
+                    <div class="form-check form-switch text-light ms-3">
+                        <input class="form-check-input" type="checkbox" id="themeSwitch">
+                        <label class="form-check-label" for="themeSwitch" id="modeLabel">Dark Mode</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <h1>Appointment</h1>
+    <div class="container">
+        <h2>Schedule an Appointment</h2>
+        <form id="appointmentForm">
+            <label for="trainer">Trainer:</label>
+            <select id="trainer" name="trainer" required>
+                <option value="trainer1">Mujo</option>
+                <option value="trainer2">Suljo</option>
+                <option value="trainer3">Fata</option>
+            </select><br>
+            <label for="time">Time:</label>
+            <select id="time" name="time" required>
+                <option value="07:00">07:00 - 08:00</option>
+                <option value="08:00">08:00 - 09:00</option>
+                <option value="09:00">09:00 - 10:00</option>
+                <option value="10:00">10:00 - 11:00</option>
+                <option value="11:00">11:00 - 12:00</option>
+                <option value="12:00">12:00 - 13:00</option>
+                <option value="13:00">13:00 - 14:00</option>
+                <option value="14:00">14:00 - 15:00</option>
+                <option value="15:00">15:00 - 16:00</option>
+                <option value="16:00">16:00 - 17:00</option>
+                <option value="17:00">17:00 - 18:00</option>
+                <option value="18:00">18:00 - 19:00</option>
+                <option value="19:00">19:00 - 20:00</option>
+                <option value="20:00">20:00 - 21:00</option>
+                <option value="21:00">21:00 - 22:00</option>
+                <option value="22:00">22:00 - 23:00</option>
+            </select><br>
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required><br>
+            <label>Gender:</label><br>
+            <input type="radio" id="male" name="gender" value="male" required>
+            <label for="male">Male</label><br>
+            <input type="radio" id="female" name="gender" value="female" required>
+            <label for="female">Female</label><br><br>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br>
+            <button type="button" id="btn1" onclick="submitForm()">Schedule Appointment</button>
+        </form>
+    </div>
+
+    <div class="container">
+        <h2>Scheduled Appointments</h2>
+        <table id="appointmentsTable">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Trainer</th>
+                    <th>Time</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="userTable">
+            </tbody>
+        </table>
+    </div>
+
+    <footer class="text-center py-3">
+        <div class="container1">
+            <p><a href="mailto:info@gym.com" class="text-decoration-none text-orange">info@gym.com</a> | <a href="tel:+123456789" class="text-decoration-none text-orange">+123456789</a></p>
+            <p><a href="https://www.instagram.com" target="_blank" class="text-decoration-none text-orange">@gym</a></p>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #28a745; color: #fff;">
+                    <h5 class="modal-title" id="confirmationModalLabel">Confirmation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="color: #28a745;">
+                    You have successfully scheduled an appointment!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #dc3545; color: #fff;">
+                    <h5 class="modal-title" id="errorModalLabel">Error</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="color: #dc3545;">
+                    Please fill out all fields.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="userdtat.js"></script>
+    <script>
+        const themeSwitch = document.getElementById("themeSwitch");
+        const body = document.body;
+        const modeLabel = document.getElementById("modeLabel");
+
+        themeSwitch.addEventListener("change", function() {
+            if (themeSwitch.checked) {
+                body.classList.remove("dark");
+                body.classList.add("light");
+                modeLabel.textContent = "Light Mode"; 
+            } else {
+                body.classList.remove("light");
+                body.classList.add("dark");
+                modeLabel.textContent = "Dark Mode"; 
+            }
+        });
+
+        
+        if (!themeSwitch.checked) {
+            modeLabel.textContent = 'Dark Mode'; 
+        }
+
+        function submitForm() {
+            const trainer = document.getElementById("trainer").value;
+            const time = document.getElementById("time").value;
+            const date = document.getElementById("date").value;
+            const gender = document.querySelector('input[name="gender"]:checked');
+            const username = document.getElementById("username").value;
+
+            if (trainer && time && date && gender && username) {
+                const confirmationModal = new bootstrap.Modal(document.getElementById('confirmationModal'));
+                confirmationModal.show();
+            } else {
+                const errorModal = new bootstrap.Modal(document.getElementById('errorModal'));
+                errorModal.show();
+            }
+        }
+
+
+        let appointmentData = []; 
+
+
+function fetchData() {
+    fetch('data.json')
+        .then(response => response.json())  
+        .then(data => {
+            appointmentData = data; 
+            renderAppointmentsTable();  
+        })
+        .catch(error => console.error("Error fetching data:", error));  
+}
+
+
+function renderAppointmentsTable() {
+    const tableBody = document.getElementById("userTable");
+    tableBody.innerHTML = ""; 
+
+    appointmentData.forEach((appointment, index) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${appointment.username}</td>
+            <td>${appointment.trainer}</td>
+            <td>${appointment.time}</td>
+            <td>${appointment.date}</td>
+            <td>
+                <button class="btn btn-primary btn-sm edit-btn" data-index="${index}">Edit</button>
+                <button class="btn btn-danger btn-sm delete-btn" data-index="${index}">Delete</button>
+            </td>
+        `;
+        tableBody.appendChild(row);
+    });
+
+ 
+    document.querySelectorAll(".edit-btn").forEach(button =>
+        button.addEventListener("click", handleEdit)
+    );
+    document.querySelectorAll(".delete-btn").forEach(button =>
+        button.addEventListener("click", handleDelete)
+    );
+}
+
+function handleEdit(event) {
+    const index = event.target.getAttribute("data-index");
+    const appointment = appointmentData[index];
+
+    const newUsername = prompt("Edit Username:", appointment.username);
+    const newTrainer = prompt("Edit Trainer:", appointment.trainer);
+    const newTime = prompt("Edit Time:", appointment.time);
+    const newDate = prompt("Edit Date:", appointment.date);
+
+    if (newUsername && newTrainer && newTime && newDate) {
+
+        appointmentData[index] = { username: newUsername, trainer: newTrainer, time: newTime, date: newDate };
+        renderAppointmentsTable();  // Re-render the table
+        toastr.success("Appointment updated successfully!");
+    } else {
+        toastr.error("Edit canceled or invalid input.");
+    }
+}
+
+
+function handleDelete(event) {
+    const index = event.target.getAttribute("data-index");
+    const confirmDelete = confirm("Are you sure you want to delete this appointment?");
+
+    if (confirmDelete) {
+        // Remove the appointment from the appointmentData array
+        appointmentData.splice(index, 1);
+        renderAppointmentsTable();  // Re-render the table
+        toastr.success("Appointment deleted successfully!");
+    }
+}
+
+
+fetchData();
+
+
+    </script>
+</body>
+</html>

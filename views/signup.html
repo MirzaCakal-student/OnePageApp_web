@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customized Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/validator@13.9.0/validator.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #1e1e1e;
+            margin: 0;
+        }
+
+        .form-container {
+            background-color: #ff5722;
+            padding: 30px;
+            border-radius: 10px;
+            width: 377px;
+            height: 515px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .form-container .input-group {
+            margin-bottom: 15px;
+        }
+
+        .form-container input {
+            background-color: #2b2b2b;
+            color: white;
+            border: 1px solid #444;
+            padding: 10px;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        .form-container button {
+            width: 100%;
+            background-color: #ff8c42;
+            border: none;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-container button:hover {
+            background-color: #ff7033;
+        }
+
+        .form-container .links {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .form-container .links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .form-container .links a:hover {
+            text-decoration: underline;
+        }
+
+        .password-strength {
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .strength-weak {
+            color: red;
+        }
+
+        .strength-medium {
+            color: orange;
+        }
+
+        .strength-strong {
+            color: green;
+        }
+
+        .show-password {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: white;
+        }
+
+        .input-group {
+            position: relative;
+        }
+
+        .box {
+            position: relative;
+            width: 380px;
+            height: 520px;
+            background: #ff5722;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box::before {
+            content: "";
+            z-index: 1;
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 380px;
+            height: 520px;
+            transform-origin: bottom right;
+            background: linear-gradient(0deg, transparent, #e4e4e4, #ff5722);
+            animation: rotateAnim 6s linear infinite;
+        }
+
+        .box::after {
+            content: "";
+            z-index: 1;
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 380px;
+            height: 520px;
+            transform-origin: bottom right;
+            background: linear-gradient(0deg, transparent, #a7a7a7, #ffffff);
+            animation: rotateAnim 6s linear infinite;
+            animation-delay: -3s;
+        }
+
+        @keyframes rotateAnim {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="form-container">
+            <h2>Sign Up</h2>
+            <form id="signUpForm">
+                <div class="input-group">
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="username" name="username" placeholder="Username" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                    <span class="show-password" aria-label="Show Password" onclick="togglePasswordVisibility()">👁️</span>
+                </div>
+                <div id="passwordStrength" class="password-strength">Weak</div>
+                <div class="input-group">
+                    <input type="date" id="birthdate" name="birthdate" required>
+                </div>
+                <button type="submit">Sign Up</button>
+                <div class="links">
+                    <a href="login.html">Already have an account? Login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+       
+function togglePasswordVisibility() {
+var passwordField = document.getElementById('password');
+var passwordIcon = document.querySelector('.show-password');
+            
+if (passwordField.type === "password") {
+passwordField.type = "text";
+passwordIcon.textContent = "👁️"; 
+} else {
+passwordField.type = "password";
+passwordIcon.textContent = "🙈";
+}
+}
+
+     
+document.getElementById('password').addEventListener('input', function() {
+var password = this.value;
+ var strengthText = document.getElementById('passwordStrength');
+    if (password.match(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)) {
+            strengthText.textContent = "Strong";
+            strengthText.className = "password-strength strength-strong";
+    } else if (password.match(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/)) {
+            strengthText.textContent = "Medium";
+            strengthText.className = "password-strength strength-medium";
+    } else {
+            strengthText.textContent = "Weak";
+            strengthText.className = "password-strength strength-weak";
+    }
+});
+
+document.getElementById("signUpForm").addEventListener("submit", function(event) {
+ event.preventDefault();
+
+var email = document.getElementById("email").value;
+var username = document.getElementById("username").value;
+var password = document.getElementById("password").value;
+var birthdate = document.getElementById("birthdate").value;
+
+if (!email || !username || !password || !birthdate || !validator.isEmail(email)) {
+    toastr.error("Please fill all fields correctly.", "Error");
+    return;
+}
+
+$.ajax({
+url: "https://jsonplaceholder.typicode.com/posts",
+method: "POST",
+data: { email, username, password, birthdate },
+success: function(response) {
+     toastr.success("Successfully signed up!", "Success");
+     setTimeout(function() {
+     window.location.href = "main.html";
+    }, 2000);
+},
+ error: function() {
+     toastr.error("An error occurred while processing your request.", "Error");
+}
+});
+});
+    </script>
+</body>
+</html>

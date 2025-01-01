@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GYM</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    h1 {
+      text-align: center;
+      font-size: 100px;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .navbar-custom {
+      background-color: #1a1a1a;
+    }
+
+    button:hover {
+      background-color: #ff5722; 
+    }
+
+    .neon {
+      color: #ff5722;
+      text-align: center;
+      text-shadow: 0 0 20px #ff5722, 0 0 30px #ff5722, 0 0 40px #ff5722;
+    }
+
+    .slideshow-container {
+      align-items: center;
+      width: 100%;
+      margin: 20px 0;
+      border: 5px solid #ff5722;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .slide {
+      display: none;
+      width: 100%;
+    }
+
+    .slide img {
+      width: 100%;
+      height: auto;
+    }
+
+    .motivational-text {
+      background-color: #333333; 
+      padding: 40px 20px; 
+      margin-top: 50px;
+      border-radius: 10px; 
+    }
+
+    .motivational-text p {
+      color: #ff5722; 
+      font-size: 20px; 
+      font-style: italic; 
+    }
+
+    .geolocation {
+      text-align: center; 
+      margin-top: 50px; 
+      margin-bottom: 50px;
+    }
+
+    .geolocation h3 {
+      color: #ff5722; 
+      font-size: 24px; 
+      margin-bottom: 15px; 
+    }
+
+    .geolocation iframe {
+      border: 5px solid #ff5722; 
+      border-radius: 10px; 
+      max-width: 90%; 
+      height: 450px;
+    }
+
+    footer {
+      background-color: #1a1a1a;
+      color: #ff5722; 
+      text-align: center;
+      padding: 15px 0;
+      width: 100%;
+    }
+
+    footer .contact-info a {
+      color: #ff5722;
+      text-decoration: none; 
+    }
+
+    .light {
+      background-color: #ffffff !important;
+      color: #343a40;
+    }
+
+    .light .navbar-custom {
+      background-color: #f8f9fa;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .light .navbar-nav .nav-link {
+      color: #ff5722 !important;
+    }
+
+    .light .motivational-text {
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+    }
+
+    .light .geolocation iframe {
+      border-color: #666;
+    }
+
+    .light footer {
+      background-color: #e0e0e0;
+      color: #343a40;
+    }
+
+    .dark {
+      background-color: #1a1a1a !important;
+      color: #ffffff;
+    }
+
+    .dark .navbar-custom {
+      background-color: #1a1a1a;
+    }
+
+    .dark .motivational-text {
+      background-color: #333333;
+    }
+
+    .dark .geolocation iframe {
+      border-color: #ff5722;
+    }
+
+    .dark footer {
+      background-color: #1a1a1a;
+      color: #ff5722;
+    }
+
+    .light .form-check-label {
+      color: #000000 !important; 
+    }
+    
+    .dark .form-check-label {
+      color: #ffffff !important; 
+    }
+
+    .accordion {
+      margin: 20px auto;
+      max-width: 800px;
+      border-radius: 5px;
+      padding: 15px;
+    }
+
+    .accordion-item {
+      margin-bottom: 10px;
+    }
+
+    .accordion-button {
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .dark .accordion {
+      background-color: #333333;
+      color: #ffffff;
+    }
+
+    .dark .accordion-button {
+      background-color: #444444;
+      color: #ffffff;
+    }
+
+    .dark .accordion-button.collapsed {
+      background-color: #333333;
+      color: #ffffff;
+    }
+
+    .light .accordion {
+      background-color: #f8f9fa;
+      color: #343a40;
+    }
+
+    .light .accordion-button {
+      background-color: #ff5722;
+      color: #ffffff;
+    }
+
+    .light .accordion-button.collapsed {
+      background-color: #f8f9fa;
+      color: #343a40;
+    }
+
+    .card {
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  font-size: 0.9rem;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.dark .card {
+  background-color: #333333;
+  color: #ffffff;
+  border: 1px solid #444444;
+}
+
+.light .card {
+  background-color: #f8f9fa;
+  color: #343a40;
+  border: 1px solid #ddd;
+}
+
+.card-img-top {
+  height: 150px;
+  object-fit: cover;
+}
+
+.accordion h2,
+#dynamic-content h2,
+#news-section h2 {
+  color: #ff5722;
+}
+
+.accordion-button,
+.card-news {
+  color: #ff5722;
+}
+
+  </style>
+</head>
+<body class="bg-dark dark">
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-custom py-3">
+      <div class="container-fluid px-4">
+        <a class="navbar-brand" href="#">
+          <img src="slike/logo.png" alt="Logo" style="height: 70px; width: 70px;">
+        </a>
+        <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="navbar-nav ms-auto">
+            <a href="main.html" class="nav-link menuItem text-light mx-2">Home</a>
+            <a href="shop.html" class="nav-link menuItem text-light mx-2">Shop</a>
+            <a href="termin.html" class="nav-link menuItem text-light mx-2">Appointment</a>
+            <div class="form-check form-switch text-light ms-3">
+              <input class="form-check-input" type="checkbox" id="themeSwitch">
+              <label class="form-check-label" for="themeSwitch">Dark Mode</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section>
+    <h1 class="neon">M-GYM</h1>
+  </section>
+
+  <section class="slideshow-container">
+    <div class="slide">
+      <img src="slike/slika1.jpg" alt="Slika 1">
+    </div>
+    <div class="slide">
+      <img src="slike/slika2.jpg" alt="Slika 2">
+    </div>
+    <div class="slide">
+      <img src="slike/slika3.jpg" alt="Slika 3">
+    </div>
+    <div class="slide">
+      <img src="slike/slika4.jpg" alt="Slika 4">
+    </div>
+  </section>
+
+  <section class="motivational-text text-center">
+    <p>Push yourself, because no one else is going to do it for you. Keep going, your goals are closer than you think!</p>
+  </section>
+
+ 
+  <section class="geolocation">
+    <h3>Find Us in Ilijaš</h3>
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d92271.12614835055!2d18.234503050000007!3d43.9515738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4758d7f873ed50f9%3A0x8e3d127118d69c16!2sIlija%C5%A1!5e0!3m2!1sen!2sba!4v1695828581236!5m2!1sen!2sba" 
+      width="600" 
+      height="450" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </section>
+  
+  
+
+  <section id="dynamic-content" class="container my-5">
+    <h2 class="text-center">Our Blog</h2>
+    <div id="content-container" class="row"></div>
+  </section>
+
+  <section id="news-section" class="text-center my-5">
+    <h2>Latest Gym and Sports News</h2>
+    <div id="news-container" class="row text-light">
+      <p>Loading sports news...</p>
+    </div>
+  </section>
+
+
+  <section class="accordion">
+    <h2 class="text-center">FAQs</h2>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+          What are your gym hours?
+        </button>
+      </h2>
+      <div id="faq1" class="accordion-collapse collapse show">
+        <div class="accordion-body">
+          Our gym is open 24/7 to fit your schedule.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+          Do you offer personal training?
+        </button>
+      </h2>
+      <div id="faq2" class="accordion-collapse collapse">
+        <div class="accordion-body">
+          Yes, we have professional trainers available for personalized coaching.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+          Are there membership discounts?
+        </button>
+      </h2>
+      <div id="faq3" class="accordion-collapse collapse">
+        <div class="accordion-body">
+          We offer discounts for students, seniors, and military personnel.
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="contact-info">
+      <a href="mailto:gym@gym.com">info@gym.com</a>
+      <a href="tel:+123456789">+123456789</a>
+      <a href="https://www.instagram.com/gym" target="_blank">@gym</a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    
+    let slideIndex = 0;
+    function showSlides() {
+      const slides = document.querySelectorAll(".slide");
+      slides.forEach(slide => (slide.style.display = "none"));
+      slideIndex++;
+      if (slideIndex > slides.length) {
+        slideIndex = 1;
+      }
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 3000);
+    }
+    showSlides();
+  
+   
+const themeSwitch = document.querySelector("#themeSwitch");
+const body = document.body;
+themeSwitch.addEventListener("change", () => {
+  const isDark = body.classList.contains("dark");
+  body.classList.toggle("light", isDark);
+  body.classList.toggle("dark", !isDark);
+  themeSwitch.nextElementSibling.textContent = isDark
+    ? "Light Mode"
+    : "Dark Mode";
+});
+  
+function loadContent() {
+  fetch("blog.json")
+    .then(response => {
+    if (!response.ok) {
+       throw new Error("Network response was not ok " + response.statusText);
+          }
+          return response.json();
+        })
+        .then(data => {
+          const contentContainer = document.getElementById("content-container");
+          contentContainer.innerHTML = "";
+          data.forEach(item => {
+            const contentCard = document.createElement("div");
+            contentCard.className = "col-md-4 mb-4";
+            contentCard.innerHTML = `
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title">${item.title}</h5>
+                  <p class="card-text">${item.content}</p>
+                </div>
+              </div>
+            `;
+            contentContainer.appendChild(contentCard);
+          });
+        })
+    .catch(error => {
+     console.error("Error fetching data:", error);
+     document.getElementById("content-container").innerHTML = `
+     <p class="text-danger text-center">Failed to load content. Please try again later.</p>
+          `;
+  });
+}
+  
+  
+function fetchSportsNews() {
+const apiKey = "e4bb142a6d114268a7c55e1a478dfa84"; 
+const url = `https://newsapi.org/v2/everything?q=gym OR fitness OR sports&language=en&sortBy=publishedAt&apiKey=${apiKey}`;
+  
+  fetch(url)
+   .then(response => {
+      if (!response.ok) {
+          throw new Error("Network response was not ok " + response.statusText);
+          }
+          return response.json();
+        })
+  .then(data => {
+    const newsContainer = document.getElementById("news-container");
+    newsContainer.innerHTML = ""; 
+        if (data.articles.length === 0) {
+            newsContainer.innerHTML =
+              "<p>No news available at the moment. Check back later!</p>";
+            return;
+          }
+          data.articles.slice(0, 6).forEach(article => {
+  const newsCard = document.createElement("div");
+  newsCard.className = "col-md-4 mb-4";
+  newsCard.innerHTML = `
+    <div class="card h-100">
+      <img src="${article.urlToImage || 'default-image.jpg'}" class="card-img-top" alt="News Image">
+      <div class="card-body">
+        <h5 class="card-title">${article.title}</h5>
+        <p class="card-text">${article.description || "No description available."}</p>
+      </div>
+    </div>
+  `;
+newsContainer.appendChild(newsCard);
+  });
+ })
+  .catch(error => {
+  console.error("Error fetching news:", error);
+  document.getElementById("news-container").innerHTML = `
+   <p class="text-danger">Failed to load sports news. Please try again later.</p>
+          `;
+});
+
+        
+}
+  
+   
+document.addEventListener("DOMContentLoaded", () => {
+loadContent();
+fetchSportsNews();
+});
+  </script>
+  
+  </script>
+</body>
+</html>

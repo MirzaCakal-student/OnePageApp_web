@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .navbar-custom {
+            background-color: #1a1a1a;
+        }
+        .navbar-custom .menuItem {
+            color: #ffffff;
+        }
+        .navbar-custom .menuItem:hover {
+            color: #ff5722;
+        }
+        button:hover {
+            background-color: #ff5722;
+        }
+        .btn-buy {
+            background-color: #ff5722;
+            border: none;
+        }
+        .btn-buy:hover {
+            background-color: #e64a19;
+        }
+        h1 {
+            color: #ff5722;
+        }
+        .modal-content {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            border: 3px solid #ff5722;
+            border-radius: 10px;
+        }
+        .modal-dialog {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 90%;
+        }
+        .btn-close-white {
+            filter: brightness(0) invert(1);
+        }
+        .border-orange {
+            border-color: #ff5722 !important;
+        }
+        .text-orange {
+            color: #ff5722 !important;
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        .container {
+            flex: 1;
+        }
+        footer {
+            background-color: #1a1a1a;
+            color: #ff5722;
+            text-align: center;
+            padding: 15px 0;
+            width: 100%;
+        }
+        .text-orange {
+            color: #ff5722 !important;
+        }
+
+        .light {
+            background-color: #ffffff !important;
+            color: #343a40;
+        }
+
+        .light .navbar-custom {
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .light .navbar-nav .nav-link {
+            color: #ff5722 !important;
+        }
+
+        .light .motivational-text {
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+        }
+
+        .light footer {
+            background-color: #e0e0e0;
+            color: #343a40;
+        }
+
+        .light .card {
+            background-color: #f8f9fa !important;
+            color: #343a40 !important;
+            border: 1px solid #ddd !important;
+        }
+
+        .dark {
+            background-color: #1a1a1a !important;
+            color: #ffffff;
+        }
+
+        .dark .navbar-custom {
+            background-color: #1a1a1a;
+        }
+
+        .dark .motivational-text {
+            background-color: #333333;
+        }
+
+        .dark footer {
+            background-color: #1a1a1a;
+            color: #ff5722;
+        }
+
+        .light .form-check-label {
+            color: #000000 !important;
+        }
+
+        .dark .form-check-label {
+            color: #ffffff !important;
+        }
+
+        .more-text {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .view-more-btn {
+            color: #ffffff;
+            background: transparent;
+            border: none;
+        }
+        .view-more-btn:hover {
+            color: #ffffff !important;
+        }
+
+        .interactive-gallery img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="bg-dark text-light dark">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-custom py-3">
+            <div class="container-fluid px-4">
+                <a class="navbar-brand">
+                    <img src="slike/logo.png" alt="Logo" style="height: 70px; width: 70px;">
+                </a>
+                <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="navbar-nav ms-auto">
+                        <a href="main.html" class="nav-link menuItem text-light mx-2">Home</a>
+                        <a href="shop.html" class="nav-link menuItem text-light mx-2">Shop</a>
+                        <a href="termin.html" class="nav-link menuItem text-light mx-2">Appointment</a>
+                        <div class="form-check form-switch text-light ms-3">
+                            <input class="form-check-input" type="checkbox" id="themeSwitch">
+                            <label class="form-check-label" for="themeSwitch" id="modeLabel">Light Mode</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container py-5 text-center">
+        <h1>Shop</h1>
+        <div class="d-flex flex-column align-items-center py-3">
+            
+            <div class="col-12 col-md-8 mb-4">
+                <div class="card bg-dark text-light h-100 border border-orange">
+                    <img src="slike/prework.jpeg" class="card-img-top interactive-gallery" alt="Whey Protein" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="slike/prework.jpeg">
+                    <div class="card-body">
+                        <h5 class="card-title text-orange">Whey Protein</h5>
+                        <p class="card-text">Protein powder for building muscle.</p>
+                        <button class="btn btn-buy w-100" data-bs-toggle="modal" data-bs-target="#purchaseModal" data-title="Whey Protein" data-image="slike/prework.jpeg">Buy</button>
+                        <button class="view-more-btn" onclick="toggleDescription(this)">View More</button>
+                        <div class="more-text">
+                            <p>This is a premium whey protein supplement that helps in muscle recovery and strength building.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-8 mb-4">
+                <div class="card bg-dark text-light h-100 border border-orange">
+                    <img src="slike/creatine.jpeg" class="card-img-top interactive-gallery" alt="Creatine" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="slike/creatine.jpeg">
+                    <div class="card-body">
+                        <h5 class="card-title text-orange">Creatine</h5>
+                        <p class="card-text">Enhance strength and power.</p>
+                        <button class="btn btn-buy w-100" data-bs-toggle="modal" data-bs-target="#purchaseModal" data-title="Creatine" data-image="slike/creatine.jpeg">Buy</button>
+                        <button class="view-more-btn" onclick="toggleDescription(this)">View More</button>
+                        <div class="more-text">
+                            <p>Creatine helps in increasing the ATP energy levels, improving performance in high-intensity training.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-8 mb-4">
+                <div class="card bg-dark text-light h-100 border border-orange">
+                    <img src="slike/bcaa.jpeg" class="card-img-top interactive-gallery" alt="BCAA" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="slike/bcaa.jpeg">
+                    <div class="card-body">
+                        <h5 class="card-title text-orange">BCAA</h5>
+                        <p class="card-text">Amino acids for recovery.</p>
+                        <button class="btn btn-buy w-100" data-bs-toggle="modal" data-bs-target="#purchaseModal" data-title="BCAA" data-image="slike/bcaa.jpeg">Buy</button>
+                        <button class="view-more-btn" onclick="toggleDescription(this)">View More</button>
+                        <div class="more-text">
+                            <p>BCAAs are essential for muscle recovery after strenuous exercise, reducing muscle soreness.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-8 mb-4">
+                <div class="card bg-dark text-light h-100 border border-orange">
+                    <img src="slike/prework.jpeg" class="card-img-top interactive-gallery" alt="Preworkout" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="slike/prework.jpeg">
+                    <div class="card-body">
+                        <h5 class="card-title text-orange">Preworkout</h5>
+                        <p class="card-text">Boost your energy before the gym.</p>
+                        <button class="btn btn-buy w-100" data-bs-toggle="modal" data-bs-target="#purchaseModal" data-title="Preworkout" data-image="slike/prework.jpeg">Buy</button>
+                        <button class="view-more-btn" onclick="toggleDescription(this)">View More</button>
+                        <div class="more-text">
+                            <p>Preworkout supplements give you energy, focus, and endurance to maximize your workout performance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-8 mb-4">
+                <div class="card bg-dark text-light h-100 border border-orange">
+                    <img src="slike/majica.jpeg" class="card-img-top interactive-gallery" alt="T-Shirt" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="slike/majica.jpeg">
+                    <div class="card-body">
+                        <h5 class="card-title text-orange">T-Shirt</h5>
+                        <p class="card-text">Comfortable gym wear.</p>
+                        <button class="btn btn-buy w-100" data-bs-toggle="modal" data-bs-target="#purchaseModal" data-title="T-Shirt" data-image="slike/majica.jpeg">Buy</button>
+                        <button class="view-more-btn" onclick="toggleDescription(this)">View More</button>
+                        <div class="more-text">
+                            <p>This T-shirt is designed for comfort during workouts, made from breathable and stretchy fabric.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img id="modal-image" src="" alt="Product Image" class="w-100">
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+    <div class="modal fade" id="purchaseModal" tabindex="-1" aria-labelledby="purchaseModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-success text-light">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="purchaseModalLabel">Successful Purchase</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Your purchase was successful!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center py-3">
+        <div class="container">
+            <a href="mailto:info@gym.com" class="text-decoration-none text-orange">info@gym.com</a>
+            <a href="tel:+123456789" class="text-decoration-none text-orange">+123456789</a>
+            <a href="https://www.instagram.com" target="_blank" class="text-decoration-none text-orange">@gym</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+const themeSwitch = document.getElementById('themeSwitch');
+const modeLabel = document.getElementById('modeLabel');
+        
+themeSwitch.addEventListener('change', () => {
+    if (themeSwitch.checked) {
+        document.body.classList.remove('dark');
+        document.body.classList.add('light');
+        modeLabel.textContent = 'Light Mode'; 
+    } else {
+        document.body.classList.remove('light');
+        document.body.classList.add('dark');
+        modeLabel.textContent = 'Dark Mode'; 
+        }
+});
+
+const purchaseButtons = document.querySelectorAll('.btn-buy');
+const modalTitle = document.querySelector('#purchaseModalLabel');
+        
+purchaseButtons.forEach(button => {
+    button.addEventListener('click', function() {
+    const title = this.getAttribute('data-title');
+    modalTitle.textContent = `${title} Purchase`;
+    });
+});
+
+     
+function toggleDescription(button) {
+    const moreText = button.nextElementSibling;
+    const isVisible = moreText.style.display === 'block';
+    moreText.style.display = isVisible ? 'none' : 'block';
+    button.textContent = isVisible ? 'View More' : 'View Less';
+}
+
+        
+const galleryImages = document.querySelectorAll('.interactive-gallery');
+galleryImages.forEach(image => {
+    image.addEventListener('click', function() {
+        const imageUrl = this.getAttribute('data-bs-image');
+        const modalImage = document.getElementById('modal-image');
+        modalImage.src = imageUrl;
+    });
+});
+    </script>
+</body>
+</html>
