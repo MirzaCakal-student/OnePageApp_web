@@ -1,0 +1,138 @@
+.navbar-custom {
+    background-color: #1a1a1a;
+}
+.navbar-custom .menuItem {
+    color: #ffffff;
+}
+.navbar-custom .menuItem:hover {
+    color: #ff5722;
+}
+button:hover {
+    background-color: #ff5722;
+}
+.btn-buy {
+    background-color: #ff5722;
+    border: none;
+}
+.btn-buy:hover {
+    background-color: #e64a19;
+}
+h1 {
+    color: #ff5722;
+}
+.modal-content {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border: 3px solid #ff5722;
+    border-radius: 10px;
+}
+.modal-dialog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 90%;
+}
+.btn-close-white {
+    filter: brightness(0) invert(1);
+}
+.border-orange {
+    border-color: #ff5722 !important;
+}
+.text-orange {
+    color: #ff5722 !important;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+.container {
+    flex: 1;
+}
+footer {
+    background-color: #1a1a1a;
+    color: #ff5722;
+    text-align: center;
+    padding: 15px 0;
+    width: 100%;
+}
+.text-orange {
+    color: #ff5722 !important;
+}
+
+.light {
+    background-color: #ffffff !important;
+    color: #343a40;
+}
+
+.light .navbar-custom {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+}
+
+.light .navbar-nav .nav-link {
+    color: #ff5722 !important;
+}
+
+.light .motivational-text {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+}
+
+.light footer {
+    background-color: #e0e0e0;
+    color: #343a40;
+}
+
+.light .card {
+    background-color: #f8f9fa !important;
+    color: #343a40 !important;
+    border: 1px solid #ddd !important;
+}
+
+.dark {
+    background-color: #1a1a1a !important;
+    color: #ffffff;
+}
+
+.dark .navbar-custom {
+    background-color: #1a1a1a;
+}
+
+.dark .motivational-text {
+    background-color: #333333;
+}
+
+.dark footer {
+    background-color: #1a1a1a;
+    color: #ff5722;
+}
+
+.light .form-check-label {
+    color: #000000 !important;
+}
+
+.dark .form-check-label {
+    color: #ffffff !important;
+}
+
+.more-text {
+    display: none;
+    margin-top: 10px;
+}
+
+.view-more-btn {
+    color: #ffffff;
+    background: transparent;
+    border: none;
+}
+.view-more-btn:hover {
+    color: #ffffff !important;
+}
+
+.interactive-gallery img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
