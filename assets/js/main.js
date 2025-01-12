@@ -1,27 +1,3 @@
-let slideIndex = 0;
-function showSlides() {
-    const slides = document.querySelectorAll(".slide");
-    slides.forEach(slide => (slide.style.display = "none"));
-    slideIndex++;
-    if (slideIndex > slides.length) {
-        slideIndex = 1;
-    }
-    slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 3000);
-}
-showSlides();
-
-const themeSwitch = document.querySelector("#themeSwitch");
-const body = document.body;
-themeSwitch.addEventListener("change", () => {
-    const isDark = body.classList.contains("dark");
-    body.classList.toggle("light", isDark);
-    body.classList.toggle("dark", !isDark);
-    themeSwitch.nextElementSibling.textContent = isDark
-        ? "Light Mode"
-        : "Dark Mode";
-});
-
 function loadContent() {
     fetch("assets/data/blog.json")
         .then(response => {
@@ -31,7 +7,7 @@ function loadContent() {
             return response.json();
         })
         .then(data => {
-            const contentContainer = document.getElementById("content-container");
+            const contentContainer = document.getElementById("home-content-container"); // Ispravan ID
             contentContainer.innerHTML = "";
             data.forEach(item => {
                 const contentCard = document.createElement("div");
@@ -49,7 +25,7 @@ function loadContent() {
         })
         .catch(error => {
             console.error("Error fetching data:", error);
-            document.getElementById("content-container").innerHTML = `
+            document.getElementById("home-content-container").innerHTML = `
                 <p class="text-danger text-center">Failed to load content. Please try again later.</p>
             `;
         });
@@ -67,7 +43,7 @@ function fetchSportsNews() {
             return response.json();
         })
         .then(data => {
-            const newsContainer = document.getElementById("news-container");
+            const newsContainer = document.getElementById("home-news-container"); 
             newsContainer.innerHTML = "";
             if (data.articles.length === 0) {
                 newsContainer.innerHTML =
@@ -91,13 +67,8 @@ function fetchSportsNews() {
         })
         .catch(error => {
             console.error("Error fetching news:", error);
-            document.getElementById("news-container").innerHTML = `
+            document.getElementById("home-news-container").innerHTML = `
                 <p class="text-danger">Failed to load sports news. Please try again later.</p>
             `;
         });
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-    loadContent();
-    fetchSportsNews();
-});

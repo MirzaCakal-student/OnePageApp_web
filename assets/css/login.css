@@ -1,26 +1,30 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-}
+
 body {
     display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
     flex-direction: column;
-    background: #000000;
+   
 }
-.box {
+.login-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;    
+    height: 100vh;          
+    
+}
+
+
+.login-box {
     position: relative;
     width: 380px;
     height: 420px;
-    background:#ff5722; 
+    background: #ff5722;
     border-radius: 8px;
     overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
-.box::before {
+
+.login-box::before {
     content: "";
     z-index: 1;
     position: absolute;
@@ -32,7 +36,8 @@ body {
     background: linear-gradient(0deg, transparent, #e4e4e4, #ff5722);
     animation: animate 6s linear infinite;
 }
-.box::after {
+
+.login-box::after {
     content: "";
     z-index: 1;
     position: absolute;
@@ -45,6 +50,7 @@ body {
     animation: animate 6s linear infinite;
     animation-delay: -3s;
 }
+
 @keyframes animate {
     0% {
         transform: rotate(0deg);
@@ -53,7 +59,8 @@ body {
         transform: rotate(360deg);
     }
 }
-form {
+
+.login {
     position: absolute;
     inset: 2px;
     background: #ff5722;
@@ -63,24 +70,27 @@ form {
     display: flex;
     flex-direction: column;
 }
+
 h2 {
-    color: #fdfdfd;
+    color: #ffffff;
     font-weight: 500;
     text-align: center;
     letter-spacing: 0.1em;
 }
-.inputBox {
+
+
+.login-inputBox {
     position: relative;
     width: 300px;
     margin-top: 35px;
 }
-.inputBox input {
+
+.login-inputBox input {
     position: relative;
     width: 100%;
     padding: 20px 10px 10px;
     background: transparent;
     outline: none;
-    box-shadow: none;
     border: none;
     color: #ffffff;
     font-size: 1em;
@@ -88,7 +98,8 @@ h2 {
     transition: 0.5s;
     z-index: 10;
 }
-.inputBox span {
+
+.login-inputBox span {
     position: absolute;
     left: 0;
     padding: 20px 0px 10px;
@@ -98,13 +109,15 @@ h2 {
     letter-spacing: 0.05em;
     transition: 0.5s;
 }
-.inputBox input:valid ~ span,
-.inputBox input:focus ~ span {
+
+.login-inputBox input:valid ~ span,
+.login-inputBox input:focus ~ span {
     color: #ffffff;
     transform: translateX(0px) translateY(-34px);
     font-size: 0.75em;
 }
-.inputBox i {
+
+.login-inputBox i {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -117,34 +130,65 @@ h2 {
     pointer-events: none;
     z-index: 9;
 }
-.inputBox input:valid ~ i,
-.inputBox input:focus ~ i {
+
+.login-inputBox input:valid ~ i,
+.login-inputBox input:focus ~ i {
     height: 44px;
 }
-.links {
+
+.login-links {
     display: flex;
     justify-content: space-between;
 }
-.links a {
+
+.login-links a {
     margin: 10px 0;
     font-size: 1em;
     color: #000000;
-    text-decoration: rgb(209, 204, 204);
+    text-decoration: none;
+    transition: color 0.3s;
 }
-.links a:hover,
-.links a:nth-child(2) {
+
+.login-links a:hover {
     color: #ffffff;
 }
-#btn1 {
+
+#login-btn1 {
     width: 100%;
     padding: 10px;
     background-color: #eb5224;
     color: #ffffff;
     font-size: 18px;
-    order: none;
+    border: none;
     border-radius: 5px;
     transition: background-color 0.3s;
+    cursor: pointer;
 }
-#btn1:hover {
+
+#login-btn1:hover {
     background-color: #cf5834;
+}
+
+/* Modal styling for success and error */
+.modal-content {
+    border-radius: 8px;
+}
+
+.bg-success {
+    background-color: #28a745 !important;
+}
+
+.bg-danger {
+    background-color: #dc3545 !important;
+}
+
+.btn-light {
+    color: #000;
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
+}
+
+.btn-light:hover {
+    background-color: #e2e6ea;
+    border-color: #dae0e5;
 }

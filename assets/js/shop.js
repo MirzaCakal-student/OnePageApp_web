@@ -1,17 +1,4 @@
-const themeSwitch = document.getElementById('themeSwitch');
-const modeLabel = document.getElementById('modeLabel');
-        
-themeSwitch.addEventListener('change', () => {
-    if (themeSwitch.checked) {
-        document.body.classList.remove('dark');
-        document.body.classList.add('light');
-        modeLabel.textContent = 'Light Mode'; 
-    } else {
-        document.body.classList.remove('light');
-        document.body.classList.add('dark');
-        modeLabel.textContent = 'Dark Mode'; 
-        }
-});
+
 
 const purchaseButtons = document.querySelectorAll('.btn-buy');
 const modalTitle = document.querySelector('#purchaseModalLabel');

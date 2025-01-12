@@ -1,29 +1,19 @@
-
-  <section>
-    <h1 class="neon">M-GYM</h1>
+<section style="background-color: var(--background-color); color: var(--text-color);">
+    <h1 class="home-neon">M-GYM</h1>
   </section>
+  
+  <section class="home-slideshow-container" style="background-color: var(--background-color); color: var(--text-color);">
+    <div class="home-slide">
+        <img src="assets/slike/slika1.jpg" alt="Slika 1">
+    </div>
 
-  <section class="slideshow-container">
-    <div class="slide">
-      <img src="assets/slike/slika1.jpg" alt="Slika 1">
-    </div>
-    <div class="slide">
-      <img src="assets/slike/slika2.jpg" alt="Slika 2">
-    </div>
-    <div class="slide">
-      <img src="assets/slike/slika3.jpg" alt="Slika 3">
-    </div>
-    <div class="slide">
-      <img src="assets/slike/slika4.jpg" alt="Slika 4">
-    </div>
   </section>
-
-  <section class="motivational-text text-center">
+  
+  <section class="home-motivational-text text-center" style="background-color: var(--background-color); color: var(--text-color);">
     <p>Push yourself, because no one else is going to do it for you. Keep going, your goals are closer than you think!</p>
   </section>
-
- 
-  <section class="geolocation">
+  
+  <section class="home-geolocation" style="background-color: var(--background-color); color: var(--text-color);">
     <h3>Find Us in Ilijaš</h3>
     <iframe 
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d92271.12614835055!2d18.234503050000007!3d43.9515738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4758d7f873ed50f9%3A0x8e3d127118d69c16!2sIlija%C5%A1!5e0!3m2!1sen!2sba!4v1695828581236!5m2!1sen!2sba" 
@@ -36,59 +26,56 @@
     </iframe>
   </section>
   
-  
-
-  <section id="dynamic-content" class="container my-5">
+  <section id="home-dynamic-content" class="home-container my-5" style="background-color: var(--background-color); color: var(--text-color);">
     <h2 class="text-center">Our Blog</h2>
-    <div id="content-container" class="row"></div>
-  </section>
+    <div id="home-content-container" class="row"></div> <!-- Ovaj ID je usklađen -->
+</section>
 
-  <section id="news-section" class="text-center my-5">
+<section id="home-news-section" class="text-center my-5" style="background-color: var(--background-color); color: var(--text-color);">
     <h2>Latest Gym and Sports News</h2>
-    <div id="news-container" class="row text-light">
-      <p>Loading sports news...</p>
+    <div id="home-news-container" class="row text-light"> <!-- Ovaj ID je usklađen -->
+        <p>Loading sports news...</p>
     </div>
-  </section>
+</section>
 
-
-  <section class="accordion">
+  
+  <section class="home-accordion" style="background-color: var(--background-color); color: var(--text-color);">
     <h2 class="text-center">FAQs</h2>
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
-          What are your gym hours?
-        </button>
-      </h2>
-      <div id="faq1" class="accordion-collapse collapse show">
-        <div class="accordion-body">
-          Our gym is open 24/7 to fit your schedule.
+    <div class="home-accordion-item">
+        <h2 class="home-accordion-header">
+            <button class="home-accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                What are your gym hours?
+            </button>
+        </h2>
+        <div id="faq1" class="home-accordion-collapse collapse show">
+            <div class="home-accordion-body">
+                Our gym is open 24/7 to fit your schedule.
+            </div>
         </div>
-      </div>
     </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
-          Do you offer personal training?
-        </button>
-      </h2>
-      <div id="faq2" class="accordion-collapse collapse">
-        <div class="accordion-body">
-          Yes, we have professional trainers available for personalized coaching.
+    <div class="home-accordion-item">
+        <h2 class="home-accordion-header">
+            <button class="home-accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                Do you offer personal training?
+            </button>
+        </h2>
+        <div id="faq2" class="home-accordion-collapse collapse">
+            <div class="home-accordion-body">
+                Yes, we have professional trainers available for personalized coaching.
+            </div>
         </div>
-      </div>
     </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
-          Are there membership discounts?
-        </button>
-      </h2>
-      <div id="faq3" class="accordion-collapse collapse">
-        <div class="accordion-body">
-          We offer discounts for students, seniors, and military personnel.
+    <div class="home-accordion-item">
+        <h2 class="home-accordion-header">
+            <button class="home-accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                Are there membership discounts?
+            </button>
+        </h2>
+        <div id="faq3" class="home-accordion-collapse collapse">
+            <div class="home-accordion-body">
+                We offer discounts for students, seniors, and military personnel.
+            </div>
         </div>
-      </div>
     </div>
   </section>
-
   

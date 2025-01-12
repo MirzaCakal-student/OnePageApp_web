@@ -1,119 +1,109 @@
-
-
-    <div class="container py-5 text-center">
-        <h1>Shop</h1>
-        <div class="d-flex flex-column align-items-center py-3">
-            
-            <div class="col-12 col-md-8 mb-4">
-                <div class="card bg-dark text-light h-100 border border-orange">
-                    <img src="slike/prework.jpeg" class="card-img-top interactive-gallery" alt="Whey Protein" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="slike/prework.jpeg">
-                    <div class="card-body">
-                        <h5 class="card-title text-orange">Whey Protein</h5>
-                        <p class="card-text">Protein powder for building muscle.</p>
-                        <button class="btn btn-buy w-100" data-bs-toggle="modal" data-bs-target="#purchaseModal" data-title="Whey Protein" data-image="slike/prework.jpeg">Buy</button>
-                        <button class="view-more-btn" onclick="toggleDescription(this)">View More</button>
-                        <div class="more-text">
-                            <p>This is a premium whey protein supplement that helps in muscle recovery and strength building.</p>
-                        </div>
+<div class="shop-container py-5 text-center">
+    <h1 class="shop-title">Shop</h1>
+    <div class="d-flex flex-column align-items-center py-3">
+        
+        <div class="col-12 col-md-8 mb-4">
+            <div class="shop-card bg-dark text-light h-100 border border-orange">
+                <img src="assets\slike\/whey_protein.png" class="shop-card-img-top interactive-gallery" alt="Whey Protein" data-bs-toggle="modal" data-bs-target="#shop-imageModal" data-bs-image="slike/prework.jpeg">
+                <div class="shop-card-body">
+                    <h5 class="shop-card-title text-orange">Whey Protein</h5>
+                    <p class="shop-card-text">Protein powder for building muscle.</p>
+                    <button class="shop-btn-buy w-100" data-bs-toggle="modal" data-bs-target="#shop-purchaseModal" data-title="Whey Protein" data-image="slike/prework.jpeg">Buy</button>
+                    <button class="shop-view-more-btn" onclick="toggleDescription(this)">View More</button>
+                    <div class="shop-more-text">
+                        <p>This is a premium whey protein supplement that helps in muscle recovery and strength building.</p>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="col-12 col-md-8 mb-4">
-                <div class="card bg-dark text-light h-100 border border-orange">
-                    <img src="slike/creatine.jpeg" class="card-img-top interactive-gallery" alt="Creatine" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="slike/creatine.jpeg">
-                    <div class="card-body">
-                        <h5 class="card-title text-orange">Creatine</h5>
-                        <p class="card-text">Enhance strength and power.</p>
-                        <button class="btn btn-buy w-100" data-bs-toggle="modal" data-bs-target="#purchaseModal" data-title="Creatine" data-image="slike/creatine.jpeg">Buy</button>
-                        <button class="view-more-btn" onclick="toggleDescription(this)">View More</button>
-                        <div class="more-text">
-                            <p>Creatine helps in increasing the ATP energy levels, improving performance in high-intensity training.</p>
-                        </div>
+        <div class="col-12 col-md-8 mb-4">
+            <div class="shop-card bg-dark text-light h-100 border border-orange">
+                <img src="assets\slike\creatine.jpeg" class="shop-card-img-top interactive-gallery" alt="Creatine" data-bs-toggle="modal" data-bs-target="#shop-imageModal" data-bs-image="slike/creatine.jpeg">
+                <div class="shop-card-body">
+                    <h5 class="shop-card-title text-orange">Creatine</h5>
+                    <p class="shop-card-text">Enhance strength and power.</p>
+                    <button class="shop-btn-buy w-100" data-bs-toggle="modal" data-bs-target="#shop-purchaseModal" data-title="Creatine" data-image="slike/creatine.jpeg">Buy</button>
+                    <button class="shop-view-more-btn" onclick="toggleDescription(this)">View More</button>
+                    <div class="shop-more-text">
+                        <p>Creatine helps in increasing the ATP energy levels, improving performance in high-intensity training.</p>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="col-12 col-md-8 mb-4">
-                <div class="card bg-dark text-light h-100 border border-orange">
-                    <img src="slike/bcaa.jpeg" class="card-img-top interactive-gallery" alt="BCAA" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="slike/bcaa.jpeg">
-                    <div class="card-body">
-                        <h5 class="card-title text-orange">BCAA</h5>
-                        <p class="card-text">Amino acids for recovery.</p>
-                        <button class="btn btn-buy w-100" data-bs-toggle="modal" data-bs-target="#purchaseModal" data-title="BCAA" data-image="slike/bcaa.jpeg">Buy</button>
-                        <button class="view-more-btn" onclick="toggleDescription(this)">View More</button>
-                        <div class="more-text">
-                            <p>BCAAs are essential for muscle recovery after strenuous exercise, reducing muscle soreness.</p>
-                        </div>
+        <div class="col-12 col-md-8 mb-4">
+            <div class="shop-card bg-dark text-light h-100 border border-orange">
+                <img src="assets\slike/bcaa.jpeg" class="shop-card-img-top interactive-gallery" alt="BCAA" data-bs-toggle="modal" data-bs-target="#shop-imageModal" data-bs-image="slike/bcaa.jpeg">
+                <div class="shop-card-body">
+                    <h5 class="shop-card-title text-orange">BCAA</h5>
+                    <p class="shop-card-text">Amino acids for recovery.</p>
+                    <button class="shop-btn-buy w-100" data-bs-toggle="modal" data-bs-target="#shop-purchaseModal" data-title="BCAA" data-image="slike/bcaa.jpeg">Buy</button>
+                    <button class="shop-view-more-btn" onclick="toggleDescription(this)">View More</button>
+                    <div class="shop-more-text">
+                        <p>BCAAs are essential for muscle recovery after strenuous exercise, reducing muscle soreness.</p>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="col-12 col-md-8 mb-4">
-                <div class="card bg-dark text-light h-100 border border-orange">
-                    <img src="slike/prework.jpeg" class="card-img-top interactive-gallery" alt="Preworkout" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="slike/prework.jpeg">
-                    <div class="card-body">
-                        <h5 class="card-title text-orange">Preworkout</h5>
-                        <p class="card-text">Boost your energy before the gym.</p>
-                        <button class="btn btn-buy w-100" data-bs-toggle="modal" data-bs-target="#purchaseModal" data-title="Preworkout" data-image="slike/prework.jpeg">Buy</button>
-                        <button class="view-more-btn" onclick="toggleDescription(this)">View More</button>
-                        <div class="more-text">
-                            <p>Preworkout supplements give you energy, focus, and endurance to maximize your workout performance.</p>
-                        </div>
+        <div class="col-12 col-md-8 mb-4">
+            <div class="shop-card bg-dark text-light h-100 border border-orange">
+                <img src="assets/slike/prework.jpeg" class="shop-card-img-top interactive-gallery" alt="Preworkout" data-bs-toggle="modal" data-bs-target="#shop-imageModal" data-bs-image="slike/prework.jpeg">
+                <div class="shop-card-body">
+                    <h5 class="shop-card-title text-orange">Preworkout</h5>
+                    <p class="shop-card-text">Boost your energy before the gym.</p>
+                    <button class="shop-btn-buy w-100" data-bs-toggle="modal" data-bs-target="#shop-purchaseModal" data-title="Preworkout" data-image="slike/prework.jpeg">Buy</button>
+                    <button class="shop-view-more-btn" onclick="toggleDescription(this)">View More</button>
+                    <div class="shop-more-text">
+                        <p>Preworkout supplements give you energy, focus, and endurance to maximize your workout performance.</p>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="col-12 col-md-8 mb-4">
-                <div class="card bg-dark text-light h-100 border border-orange">
-                    <img src="slike/majica.jpeg" class="card-img-top interactive-gallery" alt="T-Shirt" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="slike/majica.jpeg">
-                    <div class="card-body">
-                        <h5 class="card-title text-orange">T-Shirt</h5>
-                        <p class="card-text">Comfortable gym wear.</p>
-                        <button class="btn btn-buy w-100" data-bs-toggle="modal" data-bs-target="#purchaseModal" data-title="T-Shirt" data-image="slike/majica.jpeg">Buy</button>
-                        <button class="view-more-btn" onclick="toggleDescription(this)">View More</button>
-                        <div class="more-text">
-                            <p>This T-shirt is designed for comfort during workouts, made from breathable and stretchy fabric.</p>
-                        </div>
+        <div class="col-12 col-md-8 mb-4">
+            <div class="shop-card bg-dark text-light h-100 border border-orange">
+                <img src="assets/slike/majica.jpeg" class="shop-card-img-top interactive-gallery" alt="T-Shirt" data-bs-toggle="modal" data-bs-target="#shop-imageModal" data-bs-image="slike/majica.jpeg">
+                <div class="shop-card-body">
+                    <h5 class="shop-card-title text-orange">T-Shirt</h5>
+                    <p class="shop-card-text">Comfortable gym wear.</p>
+                    <button class="shop-btn-buy w-100" data-bs-toggle="modal" data-bs-target="#shop-purchaseModal" data-title="T-Shirt" data-image="slike/majica.jpeg">Buy</button>
+                    <button class="shop-view-more-btn" onclick="toggleDescription(this)">View More</button>
+                    <div class="shop-more-text">
+                        <p>This T-shirt is designed for comfort during workouts, made from breathable and stretchy fabric.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    
-    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <img id="modal-image" src="" alt="Product Image" class="w-100">
-                </div>
+<!-- Modal Image -->
+<div class="modal fade" id="shop-imageModal" tabindex="-1" aria-labelledby="shop-imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img id="shop-modal-image" src="" alt="Product Image" class="w-100">
             </div>
         </div>
     </div>
+</div>
 
-   
-    <div class="modal fade" id="purchaseModal" tabindex="-1" aria-labelledby="purchaseModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content bg-success text-light">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="purchaseModalLabel">Successful Purchase</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Your purchase was successful!</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-                </div>
+<!-- Modal Purchase -->
+<div class="modal fade" id="shop-purchaseModal" tabindex="-1" aria-labelledby="shop-purchaseModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content bg-success text-light">
+            <div class="modal-header">
+                <h5 class="modal-title" id="shop-purchaseModalLabel">Successful Purchase</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Your purchase was successful!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
-
-    <footer class="text-center py-3">
-        <div class="container">
-            <a href="mailto:info@gym.com" class="text-decoration-none text-orange">info@gym.com</a>
-            <a href="tel:+123456789" class="text-decoration-none text-orange">+123456789</a>
-            <a href="https://www.instagram.com" target="_blank" class="text-decoration-none text-orange">@gym</a>
-        </div>
-    </footer>
+</div>

@@ -1,33 +1,29 @@
-
-    <div class="box">
-       
-        <form action="https://jsonplaceholder.typicode.com/posts" method="POST" autocomplete="off">
+<div class="login-container">
+    <div class="login-box">
+        <form class="login" action="https://jsonplaceholder.typicode.com/posts" method="POST" autocomplete="off">
             <h2>Login</h2>
-
-            <div class="inputBox">
+            <div class="login-inputBox">
                 <input name="username" type="text">
                 <span>Username</span>
                 <i></i>
             </div>
-
-            <div class="inputBox">
+            <div class="login-inputBox">
                 <input name="password" type="password">
                 <span>Password</span>
                 <i></i>
             </div>
-
-            <div class="links">
-                <a href="signup.html">Registration</a>
+            <div class="login-links">
+                <a href="views/signup.html">Registration</a>
             </div>
-            <button type="submit" id="btn1">Login</button>
+            <button type="submit" id="login-btn1">Login</button>
         </form>
     </div>
 
-    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal fade" id="login-successModal" tabindex="-1" aria-labelledby="login-successModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content bg-success text-light">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="successModalLabel">Success!</h5>
+                    <h5 class="modal-title" id="login-successModalLabel">Success!</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -40,12 +36,11 @@
         </div>
     </div>
 
- 
-    <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+    <div class="modal fade" id="login-errorModal" tabindex="-1" aria-labelledby="login-errorModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content bg-danger text-light">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="errorModalLabel">Error!</h5>
+                    <h5 class="modal-title" id="login-errorModalLabel">Error!</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -57,3 +52,4 @@
             </div>
         </div>
     </div>
+</div>
