@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MGYM</title>
+
+    
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem("theme") || "light";
+            document.documentElement.setAttribute("data-theme", savedTheme);
+        })();
+    </script>
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/shop.css">
+    <link rel="stylesheet" href="assets/css/login.css">
+    <link rel="stylesheet" href="assets/css/termin.css">
+    <link rel="stylesheet" href="assets/css/signup.css">
+    
+
+</head>
+<body>
+   
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-custom py-3">
+            <div class="container-fluid px-4">
+                <a class="navbar-brand" href="#">
+                    <img src="assets/slike/logo.png" alt="Logo" style="height: 70px; width: 70px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="navbar-nav ms-auto">
+                        <ul>
+                            <li class="nav-item"><button class="btn btn-primary ms-lg-3" id="logoutButton" style="display: none;">Log Out</button></li>
+                        </ul>
+                        <a href="#home" class="nav-link menuItem mx-2">Home</a>
+                        <a href="#login" class="nav-link menuItem mx-2">Login</a>
+                        <a href="#signup" class="nav-link menuItem mx-2">SignUp</a>
+                        <a href="#shop" class="nav-link menuItem mx-2">Shop</a>
+                        <a href="#termin" class="nav-link menuItem mx-2">Appointment</a>
+
+                        <div class="form-check form-switch ms-3">
+                            <input class="form-check-input" type="checkbox" id="themeSwitch">
+                            <label class="form-check-label" for="themeSwitch">Dark Mode</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+ 
+    <section id="pageContent">
+        <main id="spapp" role="main">
+            <section id="home" data-load="home.html"></section>
+            <section id="login" data-load="login.html"></section>
+            <section id="signup" data-load="signup.html"></section>
+            <section id="shop" data-load="shop.html"></section>
+            <section id="termin" data-load="termin.html"></section>
+        </main>
+    </section>
+
+
+
+  
+    <footer class="text-center py-3">
+        <div class="contact-info">
+            <a href="mailto:gym@gym.com">info@gym.com</a> |
+            <a href="tel:+123456789">+123456789</a> |
+            <a href="https://www.instagram.com/gym" target="_blank">@gym</a>
+        </div>
+    </footer>
+
+    <div id="welcomePopup" class="popup">
+        <p id="welcomeText"></p>
+    </div>
+
+ 
+<div class="modal" tabindex="-1" id="login-errorModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Login Error</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Invalid username or password. Please try again.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- Skripte -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/jquery.spapp.min.js"></script>
+    <script src="assets/js/index.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/shop.js"></script>
+    <script src="assets/js/termin.js"></script>
+    <script src="assets/js/signup.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<div class="container">
+    <h2>Schedule an Appointment</h2>
+    <form id="termin-appointmentForm">
+        <label for="termin-trainer">Trainer:</label>
+        <select id="termin-trainer" name="trainer" required>
+            <option value="trainer1">Mujo</option>
+            <option value="trainer2">Suljo</option>
+            <option value="trainer3">Fata</option>
+        </select><br>
+        <label for="termin-time">Time:</label>
+        <select id="termin-time" name="time" required>
+            <option value="07:00">07:00 - 08:00</option>
+            <option value="08:00">08:00 - 09:00</option>
+            <option value="09:00">09:00 - 10:00</option>
+            <option value="10:00">10:00 - 11:00</option>
+            <option value="11:00">11:00 - 12:00</option>
+            <option value="12:00">12:00 - 13:00</option>
+            <option value="13:00">13:00 - 14:00</option>
+            <option value="14:00">14:00 - 15:00</option>
+            <option value="15:00">15:00 - 16:00</option>
+            <option value="16:00">16:00 - 17:00</option>
+            <option value="17:00">17:00 - 18:00</option>
+            <option value="18:00">18:00 - 19:00</option>
+            <option value="19:00">19:00 - 20:00</option>
+            <option value="20:00">20:00 - 21:00</option>
+            <option value="21:00">21:00 - 22:00</option>
+            <option value="22:00">22:00 - 23:00</option>
+        </select><br>
+        <label for="termin-date">Date:</label>
+        <input type="date" id="termin-date" name="date" required><br>
+        <label for="termin-username">Username:</label>
+        <input type="text" id="termin-username" name="username" required><br>
+        <button type="button" id="termin-btn1" onclick="terminSubmitForm()">Schedule Appointment</button>
+    </form>
+</div>
+
+<div class="termin-container">
+    <h2>Scheduled Appointments</h2>
+    <table id="termin-appointmentsTable">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Trainer</th>
+                <th>Time</th>
+                <th>Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="termin-userTable">
+        </tbody>
+    </table>
+</div>

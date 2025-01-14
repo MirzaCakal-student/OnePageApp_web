@@ -1,0 +1,102 @@
+main#spapp>section {
+    display: none;
+}
+
+main#spapp>section:last-child {
+    display: block;
+}
+
+@keyframes appear {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+    to {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+main#spapp>section:target {
+    display: block;
+    animation: appear 0.1s linear 1;
+}
+
+main#spapp>section:target~* {
+    display: none;
+}
+
+html, body {
+  height: 100%;
+  justify-content: space-between;
+}
+
+:root {
+  --background-color: #ffffff;
+  --text-color: #ff5722;
+  --navbar-background: #5e5e5e;  
+  --navbar-text: #ff5722;    
+  --footer-background: #f8f9fa; 
+  --footer-text:#ff5722;       
+}
+
+[data-theme="dark"] {
+  --background-color: #1a1a1a;
+  --text-color: #ffffff;
+  --navbar-background: #333333; 
+  --navbar-text: #ffffff;      
+  --footer-background: #333333;
+  --footer-text: #ffffff;     
+}
+
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+
+.navbar-custom {
+  background-color: var(--navbar-background);
+  color: var(--navbar-text);
+}
+
+.navbar-custom .nav-link {
+  color: var(--navbar-text);
+}
+
+.navbar-custom .nav-link:hover {
+  color: var(--text-color);
+}
+
+
+footer {
+  background-color: var(--footer-background);
+  color: var(--footer-text);
+}
+
+footer .contact-info a {
+  color: var(--footer-text);
+}
+
+footer .contact-info a:hover {
+  color: var(--text-color);
+}
+
+
+.popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #ff5722; 
+  color: white; 
+  padding: 15px 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  display: none; 
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+ 

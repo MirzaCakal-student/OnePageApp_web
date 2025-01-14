@@ -1,0 +1,25 @@
+<div class="signup-box">
+    <div class="signup-form-container">
+        <h2>Sign Up</h2>
+        <form id="signup-signUpForm">
+            <div class="signup-input-group">
+                <input type="email" id="signup-email" name="email" placeholder="Email" required>
+            </div>
+            <div class="signup-input-group">
+                <input type="text" id="signup-username" name="username" placeholder="Username" required>
+            </div>
+            <div class="signup-input-group">
+                <input type="password" id="signup-password" name="password" placeholder="Password" required>
+                <span class="signup-show-password" aria-label="Show Password" onclick="toggleSignupPasswordVisibility()">👁️</span>
+            </div>
+            <div id="signup-passwordStrength" class="signup-password-strength">Weak</div>
+            <div class="signup-input-group">
+                <input type="date" id="signup-birthdate" name="birthdate" required>
+            </div>
+            <button type="submit">Sign Up</button>
+            <div class="signup-links">
+                <a href="login.html">Already have an account? Login</a>
+            </div>
+        </form>
+    </div>
+</div>

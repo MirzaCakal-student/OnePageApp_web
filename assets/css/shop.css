@@ -1,0 +1,157 @@
+.container {
+    flex: 1;
+}
+
+.shop-container {
+    padding-top: 50px;
+}
+
+.shop-title {
+    color: #ff5722;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.shop-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.shop-card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.shop-card:hover .shop-card-img-top {
+    transform: scale(1.1);
+}
+
+.shop-card-body {
+    padding: 20px;
+}
+
+.shop-card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.shop-card-text {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.shop-btn-buy {
+    background-color: #ff5722;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.shop-view-more-btn {
+    color: #fff;
+    background: transparent;
+    border: none;
+    font-size: 0.9rem;
+}
+
+.shop-view-more-btn:hover {
+    color: #ff5722;
+}
+
+.shop-more-text {
+    display: none;
+    margin-top: 10px;
+}
+
+.shop-card-body .shop-more-text p {
+    color: #ccc;
+}
+
+.modal-content {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border: 3px solid #ff5722;
+    border-radius: 10px;
+}
+
+.modal-dialog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 90%;
+}
+
+.btn-close-white {
+    filter: brightness(0) invert(1);
+}
+
+.border-orange {
+    border-color: #ff5722 !important;
+}
+
+.text-orange {
+    color: #ff5722 !important;
+}
+
+.more-text {
+    display: none;
+    margin-top: 10px;
+}
+
+.view-more-btn {
+    color: #ffffff;
+    background: transparent;
+    border: none;
+}
+
+.view-more-btn:hover {
+    color: #ffffff !important;
+}
+
+.interactive-gallery img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+#shop-modal-image {
+    width: 100%;
+}
+
+.shop-btn-buy:hover {
+    background-color: #e64a19;
+}
+
+.shop-view-more-btn:hover {
+    color: #ff5722;
+}
+
+.shop-more-text {
+    display: none;
+    margin-top: 10px;
+}
+
+.shop-dark .shop-card {
+    background-color: #333333;
+    color: #ffffff;
+    border: 1px solid #444444;
+}
+
+.shop-light .shop-card {
+    background-color: #f8f9fa;
+    color: #343a40;
+    border: 1px solid #ddd;
+}
+
+.shop-dark .shop-card-title {
+    color: #ff5722;
+}
+
+.shop-light .shop-card-title {
+    color: #ff5722;
+}
